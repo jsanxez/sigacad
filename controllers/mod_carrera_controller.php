@@ -35,8 +35,7 @@ if (isset($_POST["buscar"])) {
             echo "<table id='datatable-buttons' class='table table-striped table-bordered'>";
             echo "<thead>";
             echo "<tr>";
-            echo "<th>!</th>";
-            echo "<th>Codigo mod.</th>";
+            echo "<th></th>";
             echo "<th>Código carrera</th>";
             echo "<th>Nombre carrera</th>";
             echo "</tr>";
@@ -48,7 +47,6 @@ if (isset($_POST["buscar"])) {
                 echo "<tr>";
 
                 echo "<td>" . "<input type='radio' name='select' value='" . $columna["codigo"] . "'></td>";
-                echo "<td>" . $columna["institutos_cod_modular"] . "</td>";
                 echo "<td>" . $columna["codigo"] . "</td>";
                 echo "<td>" . utf8_encode($columna["nombre"]) . "</td>";
 
@@ -71,13 +69,6 @@ if (isset($_POST["buscar"])) {
 
     }
 
-    //CONDICIONAL PARA GENERAR LA COOKIE CUANDO FILA==1:
-    // dado el caso inicializa las variables para que se puedan mostrar en el formulario:
-    if ($filas == 1){
-        inicializar_variables($resultado);
-        setcookie("galleta_codigo", $codigo);
-    }
-
 }
 
 
@@ -96,9 +87,6 @@ elseif (isset($_POST["modificar"])) {
         $filas = $resultado->num_rows;
 
 
-        //ALMACENAMOS CODIGO PARA USARLO DESPUES CON ELIMINAR:
-        setcookie("galleta_codigo", $codigo);
-
     }
 
 
@@ -110,7 +98,7 @@ elseif (isset($_POST["modificar"])) {
 elseif (isset($_POST["guardar"])) {
 
 
-    $codigo_mod = $_POST["codigo_mod"];
+    $codigo_mod = "1284486";
     $codigo = mb_strtoupper($_POST["codigo"]);
     $nombre = Validar::p_letras($_POST["nombre"]);
 
@@ -119,9 +107,8 @@ elseif (isset($_POST["guardar"])) {
 
     //Actualizamos solo si los datos son válidos:
     if (Validar::validar_cadenas($nombre))
-        $afectados = Carrera::update_by_cod($codigo_mod,$codigo,$nombre);
+        $afectados = Carrera::update_by_cod($codigo_mod,$codigo,$nombre_cod);
 
-    echo "afectados: $afectados<br>";
 
 }
 
@@ -130,14 +117,12 @@ elseif (isset($_POST["guardar"])) {
 
 function inicializar_variables ($resultado){
 
-    global $codigo_mod;
     global $codigo;
     global $nombre;
 
     global $resultado;
     foreach ($resultado as $columna) {
 
-        $codigo_mod = $columna["institutos_cod_modular"];
         $codigo = $columna["codigo"];
         $nombre = $columna["nombre"];
     }

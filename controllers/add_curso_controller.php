@@ -6,6 +6,7 @@
  * Time: 0:10
  */
 
+require "../models/Conectar.php";
 require "../models/Curso.php";
 require "../models/Validar.php";
 
@@ -24,18 +25,16 @@ if (isset($_POST["enviar"])){
     if (Validar::validar_cadenas($nombre)){
 
         $cursos = new Curso($ciclo, $codigo, $nombre, $creditos, $unidades, $horas);
-        $query = "insert into carreras_has_cursos values ('$carrera', '$codigo')";
-        echo "query: $query<br>";
-        $afectados = Curso::consulta($query);
-        echo "afec has: $afectados<br>";
-
         $afectados = $cursos->add_curso();
+        $query = "insert into carreras_cursos values ('$carrera', '$codigo')";
+        $afectados_cc = Curso::consulta($query);
 
 
-        if ($afectados >= 1) {
+
+        if ($afectados >= 1 && $afectados_cc >= 1) {
             $info = '1';
-//            header("Location: ../views/agregar_curso.view.php?info=" . $info);
-            echo "valor de has:$carrera, $codigo<br>";
+            header("Location: ../views/agregar_curso.view.php?info=" . $info);
+//            echo "valor de has:$carrera, $codigo<br>";
         } else {
             $info = "nada";
             header("Location: ../views/agregar_curso.view.php?info=" . $info);

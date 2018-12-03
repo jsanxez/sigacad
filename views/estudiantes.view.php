@@ -4,11 +4,11 @@ session_start();
 if (!isset($_SESSION["usuario"]))
     header("Location: ../index.php");
 
-require "../models/Conectar.php";
-require "../models/Estudiante.php";
-/*----------------------*/
+/*------------------------------------------*/
 require "sidebar.view.php";
 require "header.view.php";
+/*------------------------------------------*/
+require "../models/Estudiante.php";
 ?>
 
 <!-- page content -->
@@ -76,12 +76,12 @@ require "header.view.php";
                                 echo "<tr>";
 
                                 echo "<td>". $columna["dni"] . "</td>";
-                                echo "<td>". $columna["p_nombre"] . "</td>";
-                                echo "<td>". $columna["apellido_p"] . "</td>";
-                                echo "<td>". $columna["apellido_m"] . "</td>";
+                                echo "<td>". utf8_encode($columna["p_nombre"]) . "</td>";
+                                echo "<td>". utf8_encode($columna["apellido_p"]) . "</td>";
+                                echo "<td>". utf8_encode($columna["apellido_m"]) . "</td>";
                                 echo "<td>". $columna["genero"] . "</td>";
                                 echo "<td>". $columna["ciclo"] . "</td>";
-                                echo "<td>". $columna["carrera"] . "</td>";
+                                echo "<td>". utf8_encode($columna["carrera"]) . "</td>";
 
                                 echo "</tr>";
 

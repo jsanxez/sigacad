@@ -6,18 +6,19 @@
  * Time: 1:39
  */
 
+require "../models/Conectar.php";
 require "../models/Carrera.php";
 require "../models/Validar.php";
 
 if (isset($_POST["enviar"])){
 
-    $codigo_mod = $_POST["codigo_mod"];
+    $cod_modular = "1284486";
     $codigo = mb_strtoupper($_POST["codigo"]);
     $nombre = Validar::p_letras($_POST["nombre"]);
 
     if (Validar::validar_cadenas($nombre)){
 
-        $carreras = new Carrera($codigo_mod, $codigo, $nombre);
+        $carreras = new Carrera($cod_modular, $codigo, $nombre);
         $afectados = $carreras->add_carrera();
 
         if ($afectados >= 1) {

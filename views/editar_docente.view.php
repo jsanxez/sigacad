@@ -3,11 +3,13 @@ session_start();
 
 if (!isset($_SESSION["usuario"]))
     header("Location: ../index.php");
-    
-require "../controllers/mod_docente_controller.php";
-/*------------------------*/
+
+/*---------------------------------------------------*/
 require "sidebar.view.php";
 require "header.view.php";
+/*---------------------------------------------------*/
+require "../controllers/mod_docente_controller.php";
+
 ?>
 
 <!-- page content -->
@@ -165,7 +167,7 @@ require "header.view.php";
                                     <input id="name" class="form-control col-md-7 col-xs-12"
                                            data-validate-length-range="3" data-validate-words="1" name="p_nombre"
                                            placeholder="Ingrese nombre" required="required" type="text"
-                                           value="<?php if ($filas == 1) echo $p_nombre; ?>">
+                                           value="<?php if ($filas == 1) echo utf8_encode($p_nombre); ?>">
                                 </div>
                             </div>
                             <div class="item form-group">
@@ -176,7 +178,7 @@ require "header.view.php";
                                     <input id="name" class="form-control col-md-7 col-xs-12"
                                            data-validate-length-range="5" data-validate-words="1" name="s_nombre"
                                            placeholder="Ingrese nombre(s)" type="text"
-                                           value="<?php if ($filas == 1) echo $s_nombre; ?>">
+                                           value="<?php if ($filas == 1) echo utf8_encode($s_nombre); ?>">
                                 </div>
                             </div>
 
@@ -188,7 +190,7 @@ require "header.view.php";
                                     <input id="name" class="form-control col-md-7 col-xs-12"
                                            data-validate-length-range="3" data-validate-words="1" name="apellido_p"
                                            placeholder="..." required="required" type="text"
-                                           value="<?php if ($filas == 1) echo $apellido_p; ?>">
+                                           value="<?php if ($filas == 1) echo utf8_encode($apellido_p); ?>">
                                 </div>
                             </div>
                             <div class="item form-group">
@@ -199,7 +201,7 @@ require "header.view.php";
                                     <input id="name" class="form-control col-md-7 col-xs-12"
                                            data-validate-length-range="3" data-validate-words="1" name="apellido_m"
                                            placeholder="..." required="required" type="text"
-                                           value="<?php if ($filas == 1) echo $apellido_m; ?>">
+                                           value="<?php if ($filas == 1) echo utf8_encode($apellido_m); ?>">
                                 </div>
                             </div>
 
@@ -210,7 +212,7 @@ require "header.view.php";
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input id="name" class="form-control col-md-7 col-xs-12" name="titulo"
                                            placeholder="titulo profesional" required="required" type="text"
-                                           value="<?php if ($filas == 1) echo $titulo; ?>">
+                                           value="<?php if ($filas == 1) echo utf8_encode($titulo); ?>">
                                 </div>
                             </div>
 

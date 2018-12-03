@@ -51,7 +51,7 @@ if (isset($_POST["buscar"])) {
                 echo "<tr>";
 
                 echo "<td>" . "<input type='radio' name='select' value='" . $columna["codigo"] . "'></td>";
-                echo "<td>" . $columna["semestres_ciclo"] . "</td>";
+                echo "<td>" . $columna["ciclo"] . "</td>";
                 echo "<td>" . $columna["codigo"] . "</td>";
                 echo "<td>" . utf8_encode($columna["nombre"]) . "</td>";
                 echo "<td>" . $columna["creditos"] . "</td>";
@@ -77,13 +77,6 @@ if (isset($_POST["buscar"])) {
 
     }
 
-    //CONDICIONAL PARA GENERAR LA COOKIE CUANDO FILA==1:
-    // dado el caso inicializa las variables para que se puedan mostrar en el formulario:
-    if ($filas == 1){
-        inicializar_variables($resultado);
-        setcookie("galleta_codigo", $codigo);
-    }
-
 }
 
 
@@ -101,13 +94,7 @@ elseif (isset($_POST["modificar"])) {
         //de acuerdo a las filas mostramos los datos en la tabla o en el formulario:
         $filas = $resultado->num_rows;
 
-
-        //ALMACENAMOS CODIGO PARA USARLO DESPUES CON ELIMINAR:
-//        setcookie("galleta_codigo", $codigo);
-
     }
-
-
 
 
 }
@@ -128,7 +115,7 @@ elseif (isset($_POST["guardar"])) {
 
     //Actualizamos solo si los datos son válidos:
     if (Validar::validar_cadenas($nombre))
-        $afectados = Curso::update_by_cod($ciclo,$codigo,$nombre,$creditos,$unidades,$horas);
+        $afectados = Curso::update_by_cod($ciclo,$codigo,$nombre_cod,$creditos,$unidades,$horas);
 
 }
 
@@ -147,7 +134,7 @@ function inicializar_variables ($resultado){
     global $resultado;
     foreach ($resultado as $columna) {
 
-        $ciclo = $columna["semestres_ciclo"];
+        $ciclo = $columna["ciclo"];
         $codigo = $columna["codigo"];
         $nombre = $columna["nombre"];
         $creditos = $columna["creditos"];

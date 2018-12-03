@@ -1,12 +1,11 @@
 <?php
 session_start();
 
-/*-----------------------------*/
+require "../models/Conectar.php";
+require "../models/Curso.php";
+/*----------------------*/
 require "sidebar.view.php";
 require "header.view.php";
-/*-----------------------------*/
-require "../models/Curso.php";
-
 ?>
 
 <!-- page content -->
@@ -49,22 +48,22 @@ require "../models/Curso.php";
                             <thead>
 
                             <tr>
+                                <th>Ciclo</th>
                                 <th>Código</th>
                                 <th>Curso</th>
                                 <th>Créditos</th>
                                 <th>Unidades</th>
                                 <th>Horas sem.</th>
                                 <th>Carrera</th>
-                                <th>Ciclo</th>
                             </tr>
                             </thead>
 
                             <tbody>
                             <?php
 
-                            $query = "select c.codigo, c.nombre as curso, c.creditos, c.unidades, c.horas_sem, r.nombre as carrera, c.ciclo
-                                      from cursos c join carreras_cursos cc join carreras r
-                                      on (c.codigo=cc.codigo_curso and cc.codigo_carrera=r.codigo)";
+                            $query = "select c.ciclo as ciclo, c.codigo, c.nombre as curso, c.creditos,
+                                      c.unidades, c.horas_sem, r.nombre as carrera from carreras r, cursos c 
+                                      where r.codigo = 'CC01'";
 
                             $datos_todos = Curso::consulta($query);
 
@@ -72,13 +71,13 @@ require "../models/Curso.php";
 
                                 echo "<tr>";
 
+                                echo "<td>" . $columna["ciclo"] . "</td>";
                                 echo "<td>" . $columna["codigo"] . "</td>";
-                                echo "<td>" . utf8_encode($columna["curso"]) . "</td>";
+                                echo "<td>" . $columna["curso"] . "</td>";
                                 echo "<td>" . $columna["creditos"] . "</td>";
                                 echo "<td>" . $columna["unidades"] . "</td>";
                                 echo "<td>" . $columna["horas_sem"] . "</td>";
-                                echo "<td>" . utf8_encode($columna["carrera"]) . "</td>";
-                                echo "<td>" . $columna["ciclo"] . "</td>";
+                                echo "<td>" . $columna["carrera"] . "</td>";
 
                                 echo "</tr>";
                             }

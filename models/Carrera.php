@@ -71,9 +71,20 @@ class Carrera extends Conectar
         return $afectados;
 
     }
+    /*public static function borrar_dependencias ($codigo_carrera){
+        $consulta = "delete from carreras_cursos where codigo_carrera='$codigo_carrera'";
+        $conexion_db = new mysqli(HOST,USER_NAME,PASS,DB_NAME);
+        $conexion_db->query($consulta);
 
-    public static function update_by_cod ($cod_mod,$codigo,$nombre){
-        $consulta = "update carreras set codigo='$codigo',institutos_cod_modular='$cod_mod',nombre='$nombre' where codigo='$codigo'";
+        $afectados = $conexion_db->affected_rows;
+
+        return $afectados;
+
+    }*/
+
+
+    public static function update_by_cod ($cod_modular,$codigo,$nombre){
+        $consulta = "update carreras set codigo_mod='$cod_modular',codigo='$codigo',nombre='$nombre' where codigo='$codigo'";
         $conexion_db = new mysqli(HOST,USER_NAME,PASS,DB_NAME);
         $conexion_db->query($consulta);
 

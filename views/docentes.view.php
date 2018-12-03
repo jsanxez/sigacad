@@ -1,13 +1,13 @@
 <?php
 session_start();
-
 if (!isset($_SESSION["usuario"]))
     header("Location: ../index.php");
 
-require "../models/Docente.php";
-/*----------------------*/
+/*-----------------------------*/
 require "sidebar.view.php";
 require "header.view.php";
+/*-----------------------------*/
+require "../models/Docente.php";
 ?>
 
 <!-- page content -->
@@ -71,15 +71,14 @@ require "header.view.php";
                                 echo "<tr>";
 
                                 echo "<td>". $columna["dni"] . "</td>";
-                                echo "<td>". $columna["p_nombre"] . "</td>";
-                                echo "<td>". $columna["apellido_p"] . "</td>";
-                                echo "<td>". $columna["titulo_prof"] . "</td>";
+                                echo "<td>". utf8_encode($columna["p_nombre"]) . "</td>";
+                                echo "<td>". utf8_encode($columna["apellido_p"]) . "</td>";
+                                echo "<td>". utf8_encode($columna["titulo_prof"]) . "</td>";
                                 echo "<td>". $columna["telefono"] . "</td>";
                                 echo "<td>". $columna["genero"] . "</td>";
                                 echo "<td>". $columna["fecha_nac"] . "</td>";
 
                                 echo "</tr>";
-
 
                             }
 

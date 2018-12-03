@@ -1,5 +1,6 @@
 <?php
 // aprovechamos la funcion consulta de Login (como la de cualquier otra clase):
+require "../models/Conectar.php";
 require "../models/Login.php";
 
 ?>
@@ -85,13 +86,13 @@ require "../models/Login.php";
                         <div class="menu_section">
                             <h3>Gestionar</h3>
                             <ul class="nav side-menu">
-                                <li><a><i class="fa fa-home"></i>Analisis de datos<span class="fa fa-chevron-down"></span></a>
+                                <!--<li><a><i class="fa fa-home"></i>Analisis de datos<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="dashboard.view.php">Estadisticas1</a></li>
                                         <li><a href="index2.html">Estadisticas2</a></li>
                                         <li><a href="index3.html">Estadisticas3</a></li>
                                     </ul>
-                                </li>
+                                </li>-->
                                 <li><a><i class="fa fa-edit"></i>Docentes<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="docentes.view.php">Todos los docentes</a></li>
@@ -122,11 +123,10 @@ require "../models/Login.php";
                                         <li><a href="editar_carrera.view.php">Editar carrera</a></li>
                                     </ul>
                                 </li>
-                                <li><a><i class="fa fa-clone"></i>Horarios<span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="fixed_sidebar.html">Gestionar horario</a></li>
-                                    </ul>
-                                </li>
+
+                                <li><a href="docentes_cursos.view.php"><i class="fa fa-clone"></i>Gestionar cursos<span class="label label-success pull-right"></span></a></li>
+                                <li><a><i class="fa fa-clone"></i>Gestionar horarios<span class="label label-success pull-right"></span></a></li>
+
                             </ul>
                         </div>
 
@@ -167,19 +167,29 @@ require "../models/Login.php";
                             <h3>Gestionar</h3>
                             <ul class="nav side-menu">
 
-                                <li><a><i class="fa fa-desktop"></i>Estudiantes<span class="fa fa-chevron-down"></span></a>
+                                <li><a><i class="fa fa-desktop"></i>Perfil<span class="label label-success pull-right"></span></a></li>
+
+                                <li><a><i class="fa fa-bug"></i>Matricula<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="estudiantes.view.php">Todos los estudiantes</a></li>
-                                        <li><a href="agregar_estudiante.view.php">Agregar estudiante</a></li>
-                                        <li><a href="editar_estudiante.view.php">Editar estudiante</a></li>
-                                        <li><a href="icons.html">Perfil estudiante</a></li>
+                                        <li><a href="e_commerce.html">A</a></li>
+                                        <li><a href="projects.html">B</a></li>
+                                        <li><a href="project_detail.html">C</a></li>
                                     </ul>
                                 </li>
+
+                                <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i>Encuestas<span class="label label-success pull-right">1</span></a></li>
+
+                                <!--<li><a><i class="fa fa-desktop"></i>Estudiantes<span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="estudiantes.view.php">Todos los estudiantes</a></li>
+                                        <li><a href="icons.html">Perfil estudiante</a></li>
+                                    </ul>
+                                </li>-->
+
                                 <li><a><i class="fa fa-table"></i>Cursos<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="cursos.view.php">Todos los cursos</a></li>
-                                        <li><a href="agregar_curso.view.php">Agregar curso</a></li>
-                                        <li><a href="editar_curso.view.php">Editar curso</a></li>
+                                        <li><a href="editar_curso.view.php">Sílabus</a></li>
                                     </ul>
                                 </li>
 
@@ -194,13 +204,26 @@ require "../models/Login.php";
                         <div class="menu_section">
                             <h3>Pagos y Reportes</h3>
                             <ul class="nav side-menu">
-                                <li><a><i class="fa fa-bug"></i>Matricula<span class="fa fa-chevron-down"></span></a>
+
+                                <li><a href="ficha_matricula.view.php"><i class="fa fa-laptop"></i>Ficha de matrícula<span class="label label-success pull-right"></span></a></li>
+
+                                <li><a><i class="fa fa-bug"></i>Notas<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="e_commerce.html">A</a></li>
-                                        <li><a href="projects.html">B</a></li>
-                                        <li><a href="project_detail.html">C</a></li>
+                                        <li><a href="e_commerce.html">Avance académico</a></li>
+                                        <li><a href="projects.html">Constancia de notas</a></li>
+                                        <li><a href="project_detail.html">Record de notas</a></li>
                                     </ul>
                                 </li>
+
+                                <li><a><i class="fa fa-bug"></i>Plan curricular<span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="e_commerce.html">AA</a></li>
+                                        <li><a href="projects.html">AB</a></li>
+                                        <li><a href="project_detail.html">AC</a></li>
+                                    </ul>
+                                </li>
+
+
 
                                 <li><a><i class="fa fa-sitemap"></i>Reportes estadísticos<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
@@ -213,7 +236,6 @@ require "../models/Login.php";
                                             </ul>
                                     </ul>
                                 </li>
-                                <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i>Encuestas<span class="label label-success pull-right">765</span></a></li>
                             </ul>
                         </div>
                     <?php elseif ($docentes->num_rows):?>

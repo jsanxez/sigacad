@@ -49,9 +49,9 @@ if (isset($_POST["buscar"])) {
 
                 echo "<td>" . "<input type='radio' name='select' value='" . $columna["dni"] . "'></td>";
                 echo "<td>" . $columna["dni"] . "</td>";
-                echo "<td>" . $columna["p_nombre"] . "</td>";
-                echo "<td>" . $columna["apellido_p"] . "</td>";
-                echo "<td>" . $columna["titulo_prof"] . "</td>";
+                echo "<td>" . utf8_encode($columna["p_nombre"]) . "</td>";
+                echo "<td>" . utf8_encode($columna["apellido_p"]) . "</td>";
+                echo "<td>" . utf8_encode($columna["titulo_prof"]) . "</td>";
                 echo "<td>" . $columna["telefono"] . "</td>";
                 echo "<td>" . $columna["genero"] . "</td>";
                 echo "<td>" . $columna["fecha_nac"] . "</td>";
@@ -120,7 +120,7 @@ elseif (isset($_POST["guardar"])) {
     //Actualizamos solo si los datos son válidos:
     if (Validar::validar_todo($dni,$p_nombre,$s_nombre,$apellido_p,$apellido_m,$telefono,$fecha_nac,$correo)){
 
-        $afectados = Docente::update_by_dni($dni,$p_nombre,$s_nombre,$apellido_p,$apellido_m,$titulo,$genero,$fecha_nac,$telefono,$correo,$direccion);
+        $afectados = Docente::update_by_dni($dni,$pnombre_cod,$snombre_cod,$papellido_cod,$mapellido_cod,$titulo_cod,$genero,$fecha_nac,$telefono,$correo,$direccion);
 
     }
 //

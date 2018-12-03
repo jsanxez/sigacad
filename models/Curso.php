@@ -74,9 +74,19 @@ class Curso extends Conectar
         return $afectados;
 
     }
+    public static function borrar_dependencias ($cod_curso){
+        $consulta = "delete from carreras_cursos where codigo_curso='$cod_curso'";
+        $conexion_db = new mysqli(HOST,USER_NAME,PASS,DB_NAME);
+        $conexion_db->query($consulta);
+
+        $afectados = $conexion_db->affected_rows;
+
+        return $afectados;
+
+    }
 
     public static function update_by_cod ($ciclo,$codigo,$nombre,$creditos,$unidades,$horas){
-        $consulta = "update cursos set codigo='$codigo',semestres_ciclo='$ciclo',nombre='$nombre',creditos='$creditos',unidades='$unidades',horas_sem='$horas' where codigo='$codigo'";
+        $consulta = "update cursos set codigo='$codigo',ciclo='$ciclo',nombre='$nombre',creditos='$creditos',unidades='$unidades',horas_sem='$horas' where codigo='$codigo'";
         $conexion_db = new mysqli(HOST,USER_NAME,PASS,DB_NAME);
         $conexion_db->query($consulta);
 

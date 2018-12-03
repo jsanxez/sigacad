@@ -3,11 +3,13 @@ session_start();
 
 if (!isset($_SESSION["usuario"]))
     header("Location: ../index.php");
-    
-require "../models/Carrera.php";
-/*----------------------*/
+
+/*---------------------------------------*/
 require "sidebar.view.php";
 require "header.view.php";
+/*---------------------------------------*/
+require "../models/Carrera.php";
+
 ?>
 
 <!-- page content -->
@@ -65,7 +67,7 @@ require "header.view.php";
                                 echo "<tr>";
 
                                 echo "<td>" . $columna["codigo"] . "</td>";
-                                echo "<td>" . $columna["nombre"] . "</td>";
+                                echo "<td>" . utf8_encode($columna["nombre"]) . "</td>";
 
                                 echo "</tr>";
                             }

@@ -1,5 +1,6 @@
 <?php
 
+require "../models/Conectar.php";
 require "../models/Docente.php";
 require "../models/Validar.php";
 

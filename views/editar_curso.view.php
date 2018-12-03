@@ -3,11 +3,12 @@ session_start();
 
 if (!isset($_SESSION["usuario"]))
     header("Location: ../index.php");
-    
-require "../controllers/mod_curso_controller.php";
-/*------------------------*/
+
+/*----------------------------------------------*/
 require "sidebar.view.php";
 require "header.view.php";
+/*----------------------------------------------*/
+require "../controllers/mod_curso_controller.php";
 ?>
 
 <!-- page content -->
@@ -72,43 +73,12 @@ require "header.view.php";
 
                                     if ($filas > 1)
                                         mostrar_tabla();
+                                    //se inicializan las variables para mostrarlas en cada entrada del formulario:
+                                    elseif ($filas == 1)
+                                        inicializar_variables($resultado);
                                     elseif ($filas == 0){
                                         echo "<label class='control-label col-md-3 col-sm-3 col-xs-12'></label>";
                                         echo "<span style='color: red;' class='col-md-6 col-sm-4 col-xs-12'>Datos no encontrados...</span><br>";
-                                    }
-                                }
-
-                                //ELIMINAR DE LA TABLA
-                                if (isset($_POST["eliminar_select"])) {
-
-                                    if (isset($_POST["select"])){
-
-                                        $codigo = $_POST["select"];
-                                        $afectados = Curso::delete_by_cod($codigo);
-
-                                        echo "<label class='control-label col-md-3 col-sm-3 col-xs-12'></label>";
-                                        echo "<span style='color: green;' class='col-md-6 col-sm-4 col-xs-12'>Eliminado satisfactoriamente.</span><br>";
-
-                                    }else{
-                                        echo "<label class='control-label col-md-3 col-sm-3 col-xs-12'></label>";
-                                        echo "<span style='color: red;' class='col-md-6 col-sm-4 col-xs-12'>Seleccione la fila a eliminar.</span><br>";
-                                    }
-                                }
-                                //ELIMINAR DEL FORMULARIO:
-                                if (isset($_POST["eliminar"])) {
-
-                                    $galleta = $_COOKIE["galleta_codigo"];
-
-                                    $afectados = Curso::delete_by_cod($galleta);
-
-                                    if ($afectados == 1){
-                                        echo "<label class='control-label col-md-3 col-sm-3 col-xs-12'></label>";
-                                        echo "<span style='color: green;' class='col-md-6 col-sm-4 col-xs-12'>Eliminado satisfactoriamente.</span><br>";
-                                    }
-                                    else{
-                                        echo "<label class='control-label col-md-3 col-sm-3 col-xs-12'></label>";
-                                        echo "<span style='color: red;' class='col-md-6 col-sm-4 col-xs-12'>Error al eliminar.</span><br>";
-
                                     }
                                 }
 
@@ -121,6 +91,52 @@ require "header.view.php";
                                     }else{
                                         echo "<label class='control-label col-md-3 col-sm-3 col-xs-12'></label>";
                                         echo "<span style='color: #F5963F;' class='col-md-6 col-sm-4 col-xs-12'>Seleccione la fila a modificar.</span><br>";
+                                    }
+                                }
+
+
+                                //ELIMINAR DE LA TABLA
+                                if (isset($_POST["eliminar_select"])) {
+
+                                    if (isset($_POST["select"])){
+
+                                        $codigo = $_POST["select"];
+                                        //eliminar datos de carreras_cursos y cursos:
+                                        $afectados_cc = curso::delete_from_carrera_curso($codigo);
+                                        $afectados = Curso::delete_by_cod($codigo);
+
+                                        if ($afectados == 1 && $afectados_cc >= 1){
+                                            echo "<label class='control-label col-md-3 col-sm-3 col-xs-12'></label>";
+                                            echo "<span style='color: green;' class='col-md-6 col-sm-4 col-xs-12'>Eliminado satisfactoriamente.</span><br>";
+                                        }else {
+                                            echo "<label class='control-label col-md-3 col-sm-3 col-xs-12'></label>";
+                                            echo "<span style='color: red;' class='col-md-6 col-sm-4 col-xs-12'>Error al eliminar</span><br>";
+                                        }
+
+
+                                    }else{
+                                        echo "<label class='control-label col-md-3 col-sm-3 col-xs-12'></label>";
+                                        echo "<span style='color: red;' class='col-md-6 col-sm-4 col-xs-12'>Seleccione la fila a eliminar.</span><br>";
+                                    }
+                                }
+                                //ELIMINAR DEL FORMULARIO:
+                                if (isset($_POST["eliminar"])) {
+
+                                    $codigo = $_POST["codigo"];
+
+                                    //eliminar datos de carreras_cursos y cursos:
+                                    $afectados_cc = curso::borrar_dependencias($codigo);
+                                    $afectados = Curso::delete_by_cod($codigo);
+
+
+                                    if ($afectados == 1 && $afectados_cc >= 1){
+                                        echo "<label class='control-label col-md-3 col-sm-3 col-xs-12'></label>";
+                                        echo "<span style='color: green;' class='col-md-6 col-sm-4 col-xs-12'>Eliminado satisfactoriamente.</span><br>";
+                                    }
+                                    else{
+                                        echo "<label class='control-label col-md-3 col-sm-3 col-xs-12'></label>";
+                                        echo "<span style='color: red;' class='col-md-6 col-sm-4 col-xs-12'>Error al eliminar.</span><br>";
+
                                     }
                                 }
 
