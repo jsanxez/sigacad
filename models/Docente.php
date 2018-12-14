@@ -98,7 +98,7 @@ class Docente extends Conectar
     }
 
     public static function update_by_dni ($dni,$p_nombre,$s_nombre,$apellido_p,$apellido_m,$titulo_prof,$genero,$fecha_nac,$telefono,$correo,$direccion){
-        $consulta = "update docentes set dni='$dni',p_nombre='$p_nombre',s_nombre='$s_nombre',apellido_p='$apellido_p',apellido_m='$apellido_m',titulo_prof='$titulo_prof',genero='$genero',fecha_nac='$fecha_nac',telefono='$telefono',correo='$correo', direccion='$direccion' where dni='$dni'";
+        $consulta = "update docentes set p_nombre='$p_nombre',s_nombre='$s_nombre',apellido_p='$apellido_p',apellido_m='$apellido_m',titulo_prof='$titulo_prof',genero='$genero',fecha_nac='$fecha_nac',telefono='$telefono',correo='$correo', direccion='$direccion' where dni='$dni'";
         $conexion_db = new mysqli(HOST,USER_NAME,PASS,DB_NAME);
         $conexion_db->query($consulta);
 

@@ -37,7 +37,7 @@ if (isset($_POST["buscar"])) {
             echo "<table id='datatable-buttons' class='table table-striped table-bordered'>";
             echo "<thead>";
             echo "<tr>";
-            echo "<th>!</th>";
+            echo "<th></th>";
             echo "<th>DNI</th>";
             echo "<th>Nombre</th>";
             echo "<th>Apellido</th>";

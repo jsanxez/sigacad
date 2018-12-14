@@ -6,6 +6,8 @@ if (!isset($_SESSION["usuario"]))
 /*------------------------*/
 require "sidebar.view.php";
 require "header.view.php";
+/*------------------------*/
+require "../controllers/utilidades.php";
 ?>
 
 <!-- page content -->
@@ -76,11 +78,9 @@ require "header.view.php";
                                             class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <select name="carrera" id="">
-                                        <option value="CC01">Construcción civil</option>
-                                        <option value="GA02">Gastronomía</option>
-                                        <option value="AM03">Contrucción de arte en madera</option>
-                                    </select>
+                                    <?php
+                                    mostrar_opciones();
+                                    ?>
                                 </div>
                             </div>
 

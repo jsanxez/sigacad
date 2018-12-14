@@ -40,7 +40,7 @@ class Validar
 
         $cadenas = self::quitar_tilde($cadenas);
 
-        if (ctype_alpha($cadenas) || empty($cadenas))
+        if (ctype_alpha($cadenas) || !empty($cadenas))
             return true;
         else
             return false;

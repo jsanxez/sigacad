@@ -35,7 +35,7 @@ if (isset($_POST["buscar"])) {
             echo "<table id='datatable-buttons' class='table table-striped table-bordered'>";
             echo "<thead>";
             echo "<tr>";
-            echo "<th>!</th>";
+            echo "<th></th>";
             echo "<th>Ciclo</th>";
             echo "<th>Código</th>";
             echo "<th>Nombre</th>";
@@ -143,12 +143,11 @@ function inicializar_variables ($resultado){
     }
 }
 
-function mostrar_botones ()
-{
+function mostrar_botones (){
 
     echo "<br>";
     echo "<div class='form-group'>";
-    echo "<div class='col-md-6 col-md-offset-3'>";
+    echo "<div class='col-md-6 col-md-offset-3' style='text-align: center'>";
     echo "<input type='submit' name='eliminar' value='Eliminar' class='btn btn-danger'>";
     echo "<input type='submit' name='guardar' value='Guardar' id='send' class='btn btn-success'>";
     echo "</div>";

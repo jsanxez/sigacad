@@ -143,6 +143,7 @@ require "../controllers/mod_docente_controller.php";
 
                                 if (isset($_POST["guardar"])){
 
+                                    echo "afectados al guardar: $afectados<br>";
                                     if ($afectados == 1){
                                         echo "<label class='control-label col-md-3 col-sm-3 col-xs-12'></label>";
                                         echo "<span style='color: green;' class='col-md-6 col-sm-4 col-xs-12'>Datos actualizados correctamente.</span><br>";

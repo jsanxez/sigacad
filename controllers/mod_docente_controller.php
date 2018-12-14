@@ -31,7 +31,7 @@ if (isset($_POST["buscar"])) {
             echo "<table id='datatable-buttons' class='table table-striped table-bordered'>";
             echo "<thead>";
             echo "<tr>";
-            echo "<th>!</th>";
+            echo "<th></th>";
             echo "<th>DNI</th>";
             echo "<th>Nombre</th>";
             echo "<th>Apellido</th>";
@@ -114,14 +114,13 @@ elseif (isset($_POST["guardar"])) {
     $mapellido_cod = utf8_decode($apellido_m);
     $titulo_cod = utf8_decode($titulo);
     $direc_cod = utf8_decode($direccion);
-//    echo "$dni,$p_nombre,$s_nombre,$apellido_p,$apellido_m,$genero,$fecha_nac,$discapacidad,$telefono,$correo,$obs<br>";
+//    echo "$dni,$p_nombre,$s_nombre,$apellido_p,$apellido_m,$genero,$fecha_nac,$telefono,$correo<br>";
 
 
     //Actualizamos solo si los datos son válidos:
     if (Validar::validar_todo($dni,$p_nombre,$s_nombre,$apellido_p,$apellido_m,$telefono,$fecha_nac,$correo)){
 
         $afectados = Docente::update_by_dni($dni,$pnombre_cod,$snombre_cod,$papellido_cod,$mapellido_cod,$titulo_cod,$genero,$fecha_nac,$telefono,$correo,$direccion);
-
     }
 //
 }

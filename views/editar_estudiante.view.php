@@ -303,7 +303,7 @@ require "../controllers/mod_estudiante_controller.php";
                             <?php
                             // mostrar botones cuando solo hay una fila afectada por la busqueda:
                             if ($filas == 1) {
-                                mostrar_botones();
+                                mostrar_boton();
                             }
 
                             ?>
