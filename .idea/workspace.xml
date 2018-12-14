@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d78e61c1-0b77-40c3-bd98-633a3061d4c8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controllers/asignar_curso_controller.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/utilidades.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/mod_curso_controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/mod_curso_controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/mod_docente_controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/mod_docente_controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/mod_estudiante_controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/mod_estudiante_controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Docente.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/Docente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Validar.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/Validar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/agregar_curso.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/agregar_curso.view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/docentes_cursos.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/docentes_cursos.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/editar_carrera.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/editar_carrera.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/editar_curso.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/editar_curso.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/editar_docente.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/editar_docente.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/editar_estudiante.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/editar_estudiante.view.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +15,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/asignar_curso_controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+            <state relative-caret-position="-2498">
+              <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
               <folding>
                 <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -38,15 +25,33 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/docentes_cursos.view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="65" column="103" selection-start-line="65" selection-start-column="103" selection-end-line="65" selection-end-column="103" />
+            <state relative-caret-position="392">
+              <caret line="146" column="29" lean-forward="true" selection-start-line="146" selection-start-column="29" selection-end-line="146" selection-end-column="29" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/register_controller.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-391">
+              <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/models/Login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -191,16 +196,18 @@
       <workItem from="1544219549332" duration="10775000" />
       <workItem from="1544375849302" duration="21710000" />
       <workItem from="1544660407982" duration="1192000" />
+      <workItem from="1544799246322" duration="5125000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73829000" />
+    <option name="totallyTimeSpent" value="78954000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22163388" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2246596" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -257,13 +264,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/register_controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -409,13 +409,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/Login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-357">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/sidebar.view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-969">
@@ -519,13 +512,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/agregar_curso.view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/utilidades.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -533,10 +519,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/agregar_curso.view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/asignar_curso_controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+        <state relative-caret-position="-2498">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
           <folding>
             <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -546,12 +539,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/docentes_cursos.view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="65" column="103" selection-start-line="65" selection-start-column="103" selection-end-line="65" selection-end-column="103" />
+        <state relative-caret-position="392">
+          <caret line="146" column="29" lean-forward="true" selection-start-line="146" selection-start-column="29" selection-end-line="146" selection-end-column="29" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/register_controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-391">
+          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>

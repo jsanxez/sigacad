@@ -79,9 +79,10 @@ require "../controllers/utilidades.php";
 
 
                                 <?php
-                                if (isset($_POST["filtrar"]) || isset($_POST["asignar"])){
+                                if (isset($_POST["filtrar"]) || isset($_POST["asignar"]) || isset($_POST["agregar"])){
 
                                     echo "<label>Cursos:</label>";
+                                    echo "valores enviados: " . $_POST["carrera"] . "," . $_POST["ciclo"] . "<br>";
                                     mostrar_cursos();
 
                                     mostrar_boton("asignar", "Asignar", "btn-info");
@@ -137,6 +138,12 @@ require "../controllers/utilidades.php";
                                     echo "<label style='color: #F5963F;'>Seleccione el curso antes de continuar...</label><br>";
                                 }
 
+                            }
+
+                            if (isset($_POST["agregar"])){
+
+                                echo "boton agregar<br>";
+                                echo "valor de carrera: " . $_POST["carrera"]."<br>";
                             }
                             ?>
 
