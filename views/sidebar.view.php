@@ -41,6 +41,17 @@ require "../models/Login.php";
 </head>
 
 
+<?php
+
+$usuario = $_SESSION["usuario"];
+
+//buscando usuario:
+$administradores = Login::consulta("select * from administradores where username='$usuario'");
+$docentes = Login::consulta("select * from docentes where dni='$usuario'");
+$estudiantes = Login::consulta("select * from estudiantes where dni='$usuario'");
+?>
+
+
 <body class="nav-md">
 <div class="container body">
     <div class="main_container">
@@ -58,8 +69,39 @@ require "../models/Login.php";
                         <img src="images/user.png" alt="..." class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
-                        <span>Bienvenido,</span>
-                        <h2><?php  echo $_SESSION["usuario"]; ?></h2>
+                        <span>Bienvenid@,</span>
+                        <h2>
+                            <?php
+
+                            $nombre = "";
+                            if ($administradores->num_rows){
+                                $saludo = Login::consulta("select username from administradores where username='$usuario'");
+
+                                foreach ($saludo as $columna)
+                                    echo utf8_encode($columna["username"]);
+                            }
+                            elseif ($estudiantes->num_rows){
+                                $saludo = Login::consulta("select p_nombre,s_nombre,apellido_p,apellido_m from estudiantes where dni='$usuario'");
+
+                                foreach ($saludo as $columna){
+                                    echo utf8_encode($columna["p_nombre"]). " ". utf8_encode($columna["apellido_p"]);
+                                    $nombre = utf8_encode($columna["p_nombre"]). " ". utf8_encode($columna["s_nombre"])." ". utf8_encode($columna["apellido_p"]) ." ". utf8_encode($columna["apellido_m"]);
+                                }
+                            }
+                            elseif ($docentes->num_rows){
+                                $saludo = Login::consulta("select p_nombre,s_nombre,apellido_p,apellido_m from docentes where dni='$usuario'");
+
+                                foreach ($saludo as $columna){
+                                    echo utf8_encode($columna["p_nombre"]). " ". utf8_encode($columna["apellido_p"]);
+                                    $nombre = utf8_encode($columna["p_nombre"]). " ". utf8_encode($columna["s_nombre"])." ". utf8_encode($columna["apellido_p"]) ." ". utf8_encode($columna["apellido_m"]);
+
+                                }
+                            }
+
+
+
+                            ?>
+                        </h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -71,16 +113,6 @@ require "../models/Login.php";
 
                 <!-- sidebar menu -->
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-
-                    <?php
-
-                    $usuario = $_SESSION["usuario"];
-
-                    //buscando usuario:
-                        $administradores = Login::consulta("select * from administradores where username='$usuario'");
-                        $docentes = Login::consulta("select * from docentes where dni='$usuario'");
-                        $estudiantes = Login::consulta("select * from estudiantes where dni='$usuario'");
-                    ?>
 
                     <?php if ($administradores->num_rows): ?>
                         <div class="menu_section">
@@ -209,8 +241,8 @@ require "../models/Login.php";
 
                                 <li><a><i class="fa fa-bug"></i>Notas<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="e_commerce.html">Avance académico</a></li>
-                                        <li><a href="projects.html">Constancia de notas</a></li>
+                                        <li><a href="avance_academico.view.php">Avance académico</a></li>
+                                        <li><a href="constancia_notas.view.php">Constancia de notas</a></li>
                                         <li><a href="project_detail.html">Record de notas</a></li>
                                     </ul>
                                 </li>

@@ -1,11 +1,13 @@
 <?php
 session_start();
+if (!isset($_SESSION["usuario"]))
+    header("Location: ../index.php");
 
-require "../models/Conectar.php";
-require "../models/Curso.php";
-/*----------------------*/
+/*---------------------------------*/
 require "sidebar.view.php";
 require "header.view.php";
+/*---------------------------------*/
+require "../models/Curso.php";
 ?>
 
 <!-- page content -->
@@ -29,7 +31,8 @@ require "header.view.php";
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-expanded="false"><i class="fa fa-wrench"></i></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="#">Settings 1</a>
                                     </li>
@@ -44,47 +47,72 @@ require "header.view.php";
                     </div>
 
                     <div class="x_content">
+
+                        <?php
+                        $query = "select distinct r.nombre as carrera
+                                  from estudiantes e join matriculas m join cursos c join carreras_cursos cc join carreras r
+                                  on (e.dni=m.dni_estudiante and m.cod_curso=c.codigo and c.codigo=cc.codigo_curso and cc.codigo_carrera=r.codigo)
+                                  where e.dni='$usuario'";
+                        $nombre_carrera = Login::consulta($query);
+
+                        foreach ($nombre_carrera as $columna)
+                            echo "<h4 style='text-align: center'>" . utf8_encode($columna["carrera"]) . "</h4><br>";
+
+                        echo "<div class='col-md-6 col-sm-12 col-xs-12'>";
+                        echo "<label>DNI: " .$usuario."</label><br>";
+                        echo "<label>ESTUDIANTE: " . $nombre ."</label>";
+                        echo "</div>";
+
+                        echo "<div class='col-md-6 col-sm-12 col-xs-12' style='text-align: right'>";
+                        echo "<label>FECHA: " . date("d")."-".date("m")."-".date("Y")."</label><br>";
+                        echo "<label>SEMESTRE: 2018-II</label>";
+                        echo "</div>";
+                        ?>
+
                         <table id="datatable-buttons" class="table table-striped table-bordered">
                             <thead>
 
-                            <tr>
-                                <th>Ciclo</th>
+                            <tr style="background-color: #e8eff4">
                                 <th>Código</th>
                                 <th>Curso</th>
+                                <th>Ciclo</th>
                                 <th>Créditos</th>
-                                <th>Unidades</th>
-                                <th>Horas sem.</th>
-                                <th>Carrera</th>
+                                <th colspan="3">Docente</th>
                             </tr>
                             </thead>
 
                             <tbody>
                             <?php
 
-                            $query = "select c.ciclo as ciclo, c.codigo, c.nombre as curso, c.creditos,
-                                      c.unidades, c.horas_sem, r.nombre as carrera from carreras r, cursos c 
-                                      where r.codigo = 'CC01'";
+                            $query = "select c.codigo, c.nombre as curso, c.ciclo, c.creditos, d.p_nombre, d.apellido_p, d.apellido_m
+                                      from estudiantes e join matriculas m join cursos c join docentes d join docentes_cursos dc
+                                      on (e.dni=m.dni_estudiante and m.cod_curso=c.codigo and d.dni=dc.dni_docente and dc.codigo_curso=c.codigo)
+                                      where e.dni='$usuario'";
 
                             $datos_todos = Curso::consulta($query);
 
+                            $creditos_tot = 0;
                             foreach ($datos_todos as $columna) {
 
                                 echo "<tr>";
 
-                                echo "<td>" . $columna["ciclo"] . "</td>";
                                 echo "<td>" . $columna["codigo"] . "</td>";
-                                echo "<td>" . $columna["curso"] . "</td>";
+                                echo "<td>" . utf8_encode($columna["curso"]) . "</td>";
+                                echo "<td>" . $columna["ciclo"] . "</td>";
                                 echo "<td>" . $columna["creditos"] . "</td>";
-                                echo "<td>" . $columna["unidades"] . "</td>";
-                                echo "<td>" . $columna["horas_sem"] . "</td>";
-                                echo "<td>" . $columna["carrera"] . "</td>";
+                                echo "<td>" . utf8_encode($columna["p_nombre"])." ".utf8_encode($columna["apellido_p"])." ".utf8_encode($columna["apellido_m"])."</td>";
 
                                 echo "</tr>";
+
+                                $creditos_tot += $columna["creditos"];
                             }
                             ?>
 
                             </tbody>
                         </table>
+                        <?php
+                            echo "<label>Créditos matriculados: $creditos_tot</label><br>";
+                            ?>
                     </div>
                 </div>
             </div>
@@ -99,20 +127,3 @@ require "header.view.php";
 require "footer.view.php";
 
 ?>
-
-<!-- Datatables -->
-<script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<script src="vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-<script src="vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-<script src="vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
-<script src="vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
-<script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
-<script src="vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-<script src="vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-<script src="vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-<script src="vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-<script src="vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
-<script src="vendors/jszip/dist/jszip.min.js"></script>
-<script src="vendors/pdfmake/build/pdfmake.min.js"></script>
-<script src="vendors/pdfmake/build/vfs_fonts.js"></script>
