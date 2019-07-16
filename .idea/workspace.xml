@@ -10,6 +10,11 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
     <option name="GROUP_DATA_SOURCES" value="true" />
@@ -29,64 +34,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/avance_academico.view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="69" column="26" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
-              <folding>
-                <element signature="n#style#0;n#h4#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="165">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/agregar_estudiante.view.php">
+        <entry file="file://$PROJECT_DIR$/models/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#label#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#label#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#label#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/constancia_notas.view.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#label#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/ficha_matricula.view.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-              <folding>
-                <element signature="n#style#0;n#h4#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="75">
+              <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/controllers/add_docente_controller.php">
+        <entry file="file://$PROJECT_DIR$/models/Conectar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-272">
-              <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+            <state relative-caret-position="315">
+              <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -106,11 +73,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/models/config.php" />
         <option value="$PROJECT_DIR$/views/sidebar_est.view.php" />
         <option value="$PROJECT_DIR$/models/Login.php" />
         <option value="$PROJECT_DIR$/models/Estudiante.php" />
-        <option value="$PROJECT_DIR$/controllers/login_controller.php" />
         <option value="$PROJECT_DIR$/controllers/register_controller.php" />
         <option value="$PROJECT_DIR$/views/dashboard.view.php" />
         <option value="$PROJECT_DIR$/views/docentes.view.php" />
@@ -144,6 +109,8 @@
         <option value="$PROJECT_DIR$/views/ficha_matricula.view.php" />
         <option value="$PROJECT_DIR$/views/avance_academico.view.php" />
         <option value="$PROJECT_DIR$/views/constancia_notas.view.php" />
+        <option value="$PROJECT_DIR$/models/config.php" />
+        <option value="$PROJECT_DIR$/controllers/login_controller.php" />
       </list>
     </option>
   </component>
@@ -192,6 +159,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.spelling" />
@@ -229,17 +197,21 @@
       <workItem from="1544799246322" duration="5725000" />
       <workItem from="1544929626087" duration="1208000" />
       <workItem from="1544978356779" duration="2048000" />
-      <workItem from="1544982299021" duration="20634000" />
+      <workItem from="1544982299021" duration="21702000" />
+      <workItem from="1545029777901" duration="1384000" />
+      <workItem from="1545364077251" duration="9000" />
+      <workItem from="1563252520244" duration="431000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103444000" />
+    <option name="totallyTimeSpent" value="106336000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23524962" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24658574" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -264,38 +236,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/models/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/Conectar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/login_controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/content.view.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -557,27 +497,57 @@
     <entry file="file://$PROJECT_DIR$/views/footer.view.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/docentes.view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="37" lean-forward="true" selection-start-line="1" selection-end-line="3" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/login_controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-561">
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/add_docente_controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/ficha_matricula.view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="n#style#0;n#h4#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/constancia_notas.view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
           <folding>
-            <element signature="n#style#0;n#span#0;n#label#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/avance_academico.view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="69" column="26" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
-          <folding>
             <element signature="n#style#0;n#h4#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#label#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -594,28 +564,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/docentes.view.php">
+    <entry file="file://$PROJECT_DIR$/views/avance_academico.view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="37" lean-forward="true" selection-start-line="1" selection-end-line="3" selection-end-column="37" />
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/ficha_matricula.view.php">
+    <entry file="file://$PROJECT_DIR$/models/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="n#style#0;n#h4#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="75">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/add_docente_controller.php">
+    <entry file="file://$PROJECT_DIR$/models/Conectar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-272">
-          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+        <state relative-caret-position="315">
+          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
         </state>
       </provider>
     </entry>
